@@ -19,7 +19,7 @@ function AddPage () {
   // [ COMPLETE    ] Add image upload.
   // [ COMPLETE    ] Add inputs for location (text) and number of nights (number).
   // [ COMPLETE    ] Add save button and onClick handler.
-  // [ NOT STARTED ] Apply styles for header, inputs, button.
+  // [ NOT STARTED ] Apply styles for header, inputs, button. Right now they are invisible.
   // [ NOT STARTED ] Connect with the backend.
 
 
@@ -56,4 +56,3 @@ function AddPage () {
 }
 
 export default AddPage;
-

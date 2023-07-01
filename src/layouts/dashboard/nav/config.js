@@ -17,6 +17,11 @@ const navConfig = [
     icon: icon('ic_plus'),
   },
   {
+    title: 'edit itinerary',
+    path: 'itinerary/edit',
+    icon: icon('ic_edit'),
+  },
+  {
     title: 'itineraries',
     path: '/itinerary/list',
     icon: icon('ic_cart'),
