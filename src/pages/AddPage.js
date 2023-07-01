@@ -16,14 +16,12 @@ const saveItinerary = () => {
 
 function AddPage () {
   // TODO: 
-  // [ NOT STARTED ] Update sidebar contents.
-  // [ PARTIAL     ] Add image upload.
-  // [ PARTIAL     ] Add inputs for location (text) and number of nights (number).
+  // [ COMPLETE    ] Add image upload.
+  // [ COMPLETE    ] Add inputs for location (text) and number of nights (number).
   // [ COMPLETE    ] Add save button and onClick handler.
-  // [ NOT STARTED ] Add functionality to retrieve current stops.
-  // [ NOT STARTED ] Add button to add a stop.
   // [ NOT STARTED ] Apply styles for header, inputs, button.
-  
+  // [ NOT STARTED ] Connect with the backend.
+
 
   const [duration, setDuration] = useState(0);
   const [location, setLocation] = useState('');
@@ -48,7 +46,7 @@ function AddPage () {
       <br /> <br /> 
       <Button 
         variant="contained"
-        disabled={duration > 0 && location !== ''}
+        disabled={duration <= 0 || location === ''}
         color="primary"
         onClick={saveItinerary}>
         Save
