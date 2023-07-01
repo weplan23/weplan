@@ -79,7 +79,7 @@ function Editor() {
       Order: text input, image upload, and text input. */}
 
       {
-        stops.map(() => {
+        stops.map(s => {
           return (
             <div>
               {/* Here... */}
