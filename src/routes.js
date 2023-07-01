@@ -2,7 +2,6 @@ import { Navigate, useRoutes } from 'react-router-dom';
 import DashboardLayout from './layouts/dashboard';
 import SimpleLayout from './layouts/simple';
 import UserPage from './pages/UserPage';
-import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
@@ -34,14 +33,6 @@ export default function Router() {
         { path: 'profile', element: <UserPage /> },
         { path: 'settings', element: <UserPage /> },
       ],
-    },
-    {
-      path: 'login',
-      element: <LoginPage />,
-    },
-    {
-      path: 'add',
-      element: <AddPage />,
     },
     {
       path: 'edit/0',
