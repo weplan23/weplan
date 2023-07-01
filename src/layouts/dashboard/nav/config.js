@@ -18,7 +18,7 @@ const navConfig = [
   },
   {
     title: 'edit itinerary',
-    path: 'itinerary/edit',
+    path: 'edit',
     icon: icon('ic_edit'),
   },
   {
