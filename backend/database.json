@@ -2,26 +2,39 @@
     "itineraryIdCount": 7,
     "itineraries": [
         {
-            "title": "Nature in Sydney"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Nature in Sydney"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Nature in Sydney"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Nature in Sydney"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Nature in Sydney"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Nature in SF"
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         },
         {
-            "title": "Shopping in Boston",
-            "nights": 6
+            "title": "Hello",
+            "location": "UNSW",
+            "profileName": "John"
         }
     ]
 }

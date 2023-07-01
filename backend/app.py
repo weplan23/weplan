@@ -40,6 +40,7 @@ def itinerary():
 
 @app.route('/itinerary', methods=['POST'])
 def itinerary_post():
+
     data = read_data()
     body = request.get_json()
     data["itineraries"].append(body)
@@ -49,6 +50,12 @@ def itinerary_post():
     return jsonify({
         "itineraryId": itineraryId
     })
+
+@app.route('/recommendations', methods=['GET'])
+def recommendations():
+    data = read_data()
+    target_data = data["itineraries"][:3]
+    return jsonify(target_data)
 
 
 # Endpoint to clear the JSON file
