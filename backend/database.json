@@ -1,1 +1,27 @@
-[]
+{
+    "itineraryIdCount": 7,
+    "itineraries": [
+        {
+            "title": "Nature in Sydney"
+        },
+        {
+            "title": "Nature in Sydney"
+        },
+        {
+            "title": "Nature in Sydney"
+        },
+        {
+            "title": "Nature in Sydney"
+        },
+        {
+            "title": "Nature in Sydney"
+        },
+        {
+            "title": "Nature in SF"
+        },
+        {
+            "title": "Shopping in Boston",
+            "nights": 6
+        }
+    ]
+}
