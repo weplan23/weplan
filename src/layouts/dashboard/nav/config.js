@@ -16,6 +16,11 @@ const navConfig = [
     path: '/itinerary/create',
     icon: icon('ic_plus'),
   },
+  {
+    title: "blog",
+    path: "/blog",
+    icon: icon("ic_analytics")
+  },
   // {
   //   title: 'edit itinerary',
   //   path: 'edit',

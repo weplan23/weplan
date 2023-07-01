@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 // @mui
-import { Box, Card, Link, Typography, Stack } from '@mui/material';
+import { Box, Card, Link, Typography, Stack, TextField } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
@@ -45,7 +45,7 @@ export default function ShopProductCard({ product }) {
             {status}
           </Label>
         )}
-        <StyledProductImg alt={name} src={cover} />
+        <StyledProductImg src={cover} />
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
@@ -70,6 +70,39 @@ export default function ShopProductCard({ product }) {
             </Typography>
             &nbsp;
             {fCurrency(price)}
+          </Typography>
+        </Stack>
+      </Stack>
+    </Card>
+  );
+}
+
+export function EditableItinerary() {
+  const status = true;
+  const cover = 'https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/sydney-symphony-orchestra-concert-hall-credit-daniel-boud-019-16-9.jpg';
+  return (
+    <Card style={{width: "300px"}}>
+
+
+
+      <Stack spacing={2} sx={{ p: 3 }}>
+
+        <Stack direction="column" alignItems="center" justifyContent="space-between">
+        <TextField id="outlined-basic" label="Itinerary name" variant="outlined" style={{margin: "5px"}}/>
+        <TextField id="outlined-basic" label="Location" variant="outlined" style={{margin: "5px"}}/>
+          <Typography variant="subtitle1">
+            <Typography
+              component="span"
+              variant="body1"
+              sx={{
+                color: 'text.disabled',
+                textDecoration: 'line-through',
+              }}
+            >
+              Test
+            </Typography>
+            &nbsp;
+            {"Test"}
           </Typography>
         </Stack>
       </Stack>

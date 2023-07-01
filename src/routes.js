@@ -10,6 +10,7 @@ import AddPage from './pages/AddPage';
 import HomePage from './pages/HomePage';
 import EditPage from './pages/EditPage';
 import Editor from './pages/Editor';
+import BlogPage from './pages/BlogPage';
 
 // ----------------------------------------------------------------------
 
@@ -25,6 +26,7 @@ export default function Router() {
         { path: 'itinerary/list', element: <ProductsPage /> },
         { path: 'edit', element: <EditPage />},
         { path: 'edit/0', element: <Editor />},
+        { path: 'blog', element: <BlogPage />},
       ],
     },
     {
@@ -34,18 +36,6 @@ export default function Router() {
         { path: 'profile', element: <UserPage /> },
         { path: 'settings', element: <UserPage /> },
       ],
-    },
-    {
-      path: 'login',
-      element: <LoginPage />,
-    },
-    {
-      path: 'add',
-      element: <AddPage />,
-    },
-    {
-      path: 'edit/0',
-      element: <Editor />,
     },
     {
       element: <SimpleLayout />,
