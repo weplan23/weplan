@@ -34,7 +34,7 @@ function Editor() {
   }
 
   const addStop = () => {
-    const oldList = [...stopList];
+    const oldList = [...stops];
     oldList.push({
       stopName: "New Stop",
       image: "null",
@@ -44,19 +44,19 @@ function Editor() {
   }
 
   const updateStopNameIndex = (index, newName) => {
-    const oldList = [...stopList];
+    const oldList = [...stops];
     oldList[index].stopName = newName;
     setStops(oldList);
   }
 
   const updateStopImageIndex = (index, newImg) => {
-    const oldList = [...stopList];
+    const oldList = [...stops];
     oldList[index].image = newImg;
     setStops(oldList);
   }
 
   const updateStopDurationIndex = (index, newDuration) => {
-    const oldList = [...stopList];
+    const oldList = [...stops];
     oldList[index].duration = newDuration;
     setStops(oldList);
   }
