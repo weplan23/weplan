@@ -27,6 +27,17 @@ def write_data(data):
         json.dump(data, file, indent=4)
 
 
+@app.route('/echo', methods=['GET'])
+def echo():
+    return jsonify({"message": "Hello, World!"})
+
+@app.route('/itinerary', methods=['GET', 'POST'])
+def itinerary():
+    data = read_data()
+    write_data(data)
+    return jsonify({"itineraryId": 0})
+
+
 # Endpoint to clear the JSON file
 @app.route('/clear', methods=['GET'])
 def clear():
