@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react'
 import { Button } from '@mui/material'
 
@@ -21,6 +19,7 @@ function AddPage () {
   // [ COMPLETE    ] Add save button and onClick handler.
   // [ NOT STARTED ] Apply styles for header, inputs, button. Right now they are invisible.
   // [ NOT STARTED ] Connect with the backend.
+  // [ NOT STARTED ] Make save button navigate to editor page.
 
 
   const [duration, setDuration] = useState(0);
