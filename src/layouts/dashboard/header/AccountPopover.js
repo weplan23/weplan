@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
@@ -26,13 +27,25 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
-
+  const navigate = useNavigate();
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handelLogout = () => {
+    navigate('/login');
+  };
+
+  const handelClose = () => {
     setOpen(null);
+  };
+
+  const handelProfile = () => {
+    navigate('/user/profile');
+  };
+  
+  const handelSettings = () => {
+    navigate('/user/settings');
   };
 
   return (
@@ -60,7 +73,7 @@ export default function AccountPopover() {
       <Popover
         open={Boolean(open)}
         anchorEl={open}
-        onClose={handleClose}
+        onClose={handelClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         PaperProps={{
@@ -88,16 +101,17 @@ export default function AccountPopover() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <Stack sx={{ p: 1 }}>
-          {MENU_OPTIONS.map((option) => (
-            <MenuItem key={option.label} onClick={handleClose}>
-              {option.label}
+            <MenuItem onClick={handelProfile}>
+              {MENU_OPTIONS[1].label}
             </MenuItem>
-          ))}
+            <MenuItem onClick={handelSettings}>
+              {MENU_OPTIONS[2].label}
+            </MenuItem>
         </Stack>
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
+        <MenuItem onClick={handelLogout} sx={{ m: 1 }}>
           Logout
         </MenuItem>
       </Popover>
