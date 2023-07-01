@@ -22,6 +22,7 @@ const stopList = [
 function Editor() {
   // Change these to hard coded values.
   const [title, setTitle] = useState('');
+  const [itineraryImg, setItineraryImg] = useState('');
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
 
@@ -73,20 +74,26 @@ function Editor() {
     <>
       <Typography variant='h3'>Edit Itinerary</Typography>
 
-      {/* File upload for image. */}
-      New itinerary image: <input 
-        type="file" 
-        accept="image/jpeg, image/png, image/jpg" 
-        onChange={e => handleUpload(e.target.value)}
-      />
-      <br /> <br /> 
+      <div style={{
+        backgroundColor: '#ddd',
+        margin: '10px',
+        padding: '5px',
+      }}>
+        <Typography variant='h5'>Details</Typography>
 
-      {/* Inputs for title, location, and number of nights. */}
-      Itinerary Title: <input type="text" value="Hard code this!" onChange={e => setTitle(e.target.value)} />
-      <br /> <br /> 
-      Location: <input type="text" value="Hard code this!" onChange={e => setLocation(e.target.value)} />
-      <br /> <br /> 
-      Duration: <input type="number" value="-1" onChange={e => setDuration(e.target.value)} /> nights
+        {/* Inputs for title, location, and number of nights. */}
+        Itinerary Title: 
+        <input type="text" value="Hard code this!" onChange={e => setTitle(e.target.value)} />
+        <br /> <br /> 
+        Image URL:
+        <input type="text" value="Hard code this!" onBlur={e => setItineraryImg(e.target.value)} />
+        <br /> <br /> 
+        Location: 
+        <input type="text" value="Hard code this!" onChange={e => setLocation(e.target.value)} />
+        <br /> <br /> 
+        Duration: 
+        <input type="number" value="-1" onChange={e => setDuration(e.target.value)} /> nights
+      </div>
 
       {/* Add stop button. */}
       <br /> <br /> 
@@ -116,17 +123,17 @@ function Editor() {
               <input
                 style={inputStyle}
                 type="text" 
-                value={s.stopName || "New Stop"} 
+                value={s.stopName} 
                 onChange={e => updateStopNameIndex(index, e.target.value)}
               />
               <br /><br /> 
               <img src={s.image} alt={`Stop ${index + 1}`}/>
               <br />
-              Update image: 
+              Stop {index + 1} image URL: 
               <input
                 style={inputStyle}
-                type="file" 
-                accept="image/jpeg, image/png, image/jpg"
+                type="text"
+                value={s.image}
                 onChange={e => updateStopImageIndex(index, e.target.value)}
               />
               <br /><br /> 
@@ -134,7 +141,7 @@ function Editor() {
               <input 
                 style={inputStyle}
                 type="text"
-                value={s.duration || "0 hours"}
+                value={s.duration}
                 onChange={e => updateStopDurationIndex(index, e.target.value)}
               />
             </div>
