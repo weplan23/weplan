@@ -1,8 +1,8 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'Wang Liao',
-  email: 'wang@liao.sh',
+  displayName: 'John Apple',
+  email: 'john@apple.com',
   photoURL: '/assets/images/avatars/avatar_default.jpg',
 };
 
