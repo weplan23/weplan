@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
 
 
 const handleUpload = (val) => {
@@ -26,10 +27,22 @@ function Editor() {
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
 
+  const [stops, setStops] = useState(stopList);
+
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate('/home');
+  }
+
+  const addStop = () => {
+    const oldList = [...stopList];
+    oldList.push({
+      name: "New Stop",
+      image: "",
+      length: "0 hours",
+    });
+    setStops(oldList);
   }
 
   return (
@@ -50,6 +63,30 @@ function Editor() {
       Location: <input type="text" value="Hard code this!" onChange={e => setLocation(e.target.value)} />
       <br /> <br /> 
       Duration: <input type="number" value="-1" onChange={e => setDuration(e.target.value)} /> nights
+
+      {/* Add stop button. */}
+      <br /> <br /> 
+      <Button 
+        variant="contained"
+        color="primary"
+        onClick={addStop}>
+        Add Stop
+      </Button>
+
+      <Typography>Your stops: </Typography>
+
+      {/* Map all stops here. Each field should be editable. 
+      Order: text input, image upload, and text input. */}
+
+      {
+        stops.map(() => {
+          return (
+            <div>
+              {/* Here... */}
+            </div>
+          )
+        })
+      }
 
       {/* Save button. */}
       <br /> <br /> 
