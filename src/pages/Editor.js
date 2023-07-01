@@ -71,7 +71,7 @@ function Editor() {
 
   return (
     <>
-      <h1>Edit Itinerary</h1> { /* TODO: Change this later! */ }
+      <Typography variant='h3'>Edit Itinerary</Typography>
 
       {/* File upload for image. */}
       New itinerary image: <input 
@@ -90,14 +90,15 @@ function Editor() {
 
       {/* Add stop button. */}
       <br /> <br /> 
+      <Typography variant='h5'>Your stops: </Typography>
       <Button 
-        variant="contained"
-        color="primary"
+        sx={{color: '#008800'}}
+        style={{border: '2px solid'}}
+        variant="outlined"
         onClick={addStop}>
         Add Stop
       </Button>
 
-      <Typography>Your stops: </Typography>
 
       {/* Map all stops here. Each field should be editable. 
       Order: text input, image upload, and text input. */}
@@ -144,8 +145,9 @@ function Editor() {
       {/* Save button. */}
       <br /> <br /> 
       <Button 
-        variant="contained"
-        color="primary"
+        sx={{color: '#008800'}}
+        style={{border: '2px solid'}}
+        variant="outlined"
         disabled={title === '' || duration <= 0 || location === ''}
         onClick={handleClick}>
         Save

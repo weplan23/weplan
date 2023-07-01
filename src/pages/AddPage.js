@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 // import { backendCall } from '../helpers'
 import { useNavigate } from 'react-router-dom';
 
@@ -32,7 +32,7 @@ function AddPage () {
 
   return (
     <>
-      <h1>Create Itinerary</h1> { /* TODO: Change this later! */ }
+      <Typography variant='h3'>Create Itinerary</Typography>
 
       {/* File upload for image. */}
       Itinerary image: <input 
@@ -52,9 +52,10 @@ function AddPage () {
       {/* Save button. */}
       <br /> <br /> 
       <Button 
-        variant="contained"
+        sx={{color: '#008800'}}
+        style={{border: '2px solid'}}
+        variant="outlined"
         disabled={title === '' || duration <= 0 || location === ''}
-        color="primary"
         onClick={handleClick}>
         Save
       </Button>
