@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 // @mui
 import { Grid, Button, Container, Stack, Typography } from '@mui/material';
@@ -6,7 +7,6 @@ import Iconify from '../components/iconify';
 import { BlogPostCard, BlogPostsSort, BlogPostsSearch } from '../sections/@dashboard/blog';
 // mock
 import POSTS from '../_mock/blog';
-
 // ----------------------------------------------------------------------
 
 const SORT_OPTIONS = [
@@ -18,11 +18,9 @@ const SORT_OPTIONS = [
 // ----------------------------------------------------------------------
 
 export default function BlogPage() {
+  const navigate = useNavigate();
   return (
     <>
-      <Helmet>
-        <title> Dashboard: Blog | Minimal UI </title>
-      </Helmet>
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>
