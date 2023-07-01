@@ -11,14 +11,10 @@ const navConfig = [
     path: '/home',
     icon: icon('ic_analytics'),
   },
-  // {
-  //   title: 'add',
-  //   path: '/dashboard/add',
-  // },
   {
     title: 'create itinerary',
     path: '/itinerary/create',
-    icon: icon('ic_user'),
+    icon: icon('ic_plus'),
   },
   {
     title: 'itineraries',
