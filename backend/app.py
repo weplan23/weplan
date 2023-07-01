@@ -31,11 +31,24 @@ def write_data(data):
 def echo():
     return jsonify({"message": "Hello, World!"})
 
-@app.route('/itinerary', methods=['GET', 'POST'])
+@app.route('/itinerary', methods=['GET'])
 def itinerary():
     data = read_data()
+    body = request.get_json()
+    itineraryId = body["itineraryId"]
+    return jsonify(data["itineraries"][itineraryId])
+
+@app.route('/itinerary', methods=['POST'])
+def itinerary_post():
+    data = read_data()
+    body = request.get_json()
+    data["itineraries"].append(body)
+    itineraryId = data["itineraryIdCount"]
+    data["itineraryIdCount"] += 1
     write_data(data)
-    return jsonify({"itineraryId": 0})
+    return jsonify({
+        "itineraryId": itineraryId
+    })
 
 
 # Endpoint to clear the JSON file
@@ -43,58 +56,6 @@ def itinerary():
 def clear():
     clear_data()
     return jsonify({"message": "Database cleared successfully"})
-
-
-# Endpoint to get all books
-@app.route('/books', methods=['GET'])
-def get_books():
-    data = read_data()
-    return jsonify(data)
-
-
-# Endpoint to add a book
-@app.route('/books', methods=['POST'])
-def add_book():
-    new_book = request.get_json()
-    data = read_data()
-    data.append(new_book)
-    write_data(data)
-    return jsonify({"message": "Book added successfully"})
-
-
-# Endpoint to get a book by ID
-@app.route('/books/<int:book_id>', methods=['GET'])
-def get_book(book_id):
-    data = read_data()
-    for book in data:
-        if book['id'] == book_id:
-            return jsonify(book)
-    return jsonify({"message": "Book not found"}), 404
-
-
-# Endpoint to update a book by ID
-@app.route('/books/<int:book_id>', methods=['PUT'])
-def update_book(book_id):
-    updated_book = request.get_json()
-    data = read_data()
-    for i, book in enumerate(data):
-        if book['id'] == book_id:
-            data[i] = updated_book
-            write_data(data)
-            return jsonify({"message": "Book updated successfully"})
-    return jsonify({"message": "Book not found"}), 404
-
-
-# Endpoint to delete a book by ID
-@app.route('/books/<int:book_id>', methods=['DELETE'])
-def delete_book(book_id):
-    data = read_data()
-    for i, book in enumerate(data):
-        if book['id'] == book_id:
-            del data[i]
-            write_data(data)
-            return jsonify({"message": "Book deleted successfully"})
-    return jsonify({"message": "Book not found"}), 404
 
 
 if __name__ == '__main__':
