@@ -1,9 +1,6 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-// layouts
 import DashboardLayout from './layouts/dashboard';
 import SimpleLayout from './layouts/simple';
-//
-// import BlogPage from './pages/BlogPage';
 import UserPage from './pages/UserPage';
 import LoginPage from './pages/LoginPage';
 import Page404 from './pages/Page404';
@@ -27,6 +24,7 @@ export default function Router() {
         { path: 'itinerary/create', element: <AddPage /> },
         { path: 'itinerary/list', element: <ProductsPage /> },
         { path: 'edit', element: <EditPage />},
+        { path: 'edit/0', element: <Editor />},
       ],
     },
     {
@@ -46,7 +44,7 @@ export default function Router() {
       element: <AddPage />,
     },
     {
-      path: 'edit/:itineraryId',
+      path: 'edit/0',
       element: <Editor />,
     },
     {

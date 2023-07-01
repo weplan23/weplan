@@ -1,23 +1,11 @@
 import React, { useState } from 'react'
 import { Button } from '@mui/material'
-import { backendCall } from '../helpers'
+// import { backendCall } from '../helpers'
+import { useNavigate } from 'react-router-dom';
 
 const handleUpload = (val) => {
   // Send image URL? to database.
   console.log(`Image uploaded successfully! ${val}`);
-}
-
-const saveItinerary = (t, l, d) => {
-  const req = {
-    title: t,
-    location: l,
-    nights: d,
-    stops: [],
-    profileName: "John"
-  }
-
-  backendCall('/itinerary', 'POST', req);
-  console.log(`Saving itinerary...`);
 }
 
 
@@ -27,17 +15,20 @@ function AddPage () {
   // [ COMPLETE    ] Add inputs for location (text) and number of nights (number).
   // [ COMPLETE    ] Add save button and onClick handler.
   // [ NOT STARTED ] Apply styles for header, inputs, button. Right now they are invisible.
-  // [ NOT STARTED ] Connect with the backend.
-  // [ NOT STARTED ] Make save button navigate to editor page.
+  // [ COMPLETE    ] Make save button navigate to editor page.
+  const navigate = useNavigate();
 
+  const handleClick = () => {
+    navigate('/edit/0');
+  }
 
   const [title, setTitle] = useState('');
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
   
-  console.log(`Title: ${title}`);
-  console.log(`Location: ${location}`);
-  console.log(`Duration: ${duration}`);
+  // console.log(`Title: ${title}`);
+  // console.log(`Location: ${location}`);
+  // console.log(`Duration: ${duration}`);
 
   return (
     <>
@@ -62,9 +53,9 @@ function AddPage () {
       <br /> <br /> 
       <Button 
         variant="contained"
-        disabled={duration <= 0 || location === ''}
+        disabled={title === '' || duration <= 0 || location === ''}
         color="primary"
-        onClick={saveItinerary}>
+        onClick={handleClick}>
         Save
       </Button>
     </>

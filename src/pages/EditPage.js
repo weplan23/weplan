@@ -2,6 +2,7 @@
 
 
 function EditPage() {
+  // TODO: hard code at least one itinerary.
   return (
     <>
       Hello, world! This is the edit page. The user can select one of their itineraries to edit from here.
