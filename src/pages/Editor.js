@@ -12,7 +12,7 @@ const handleUpload = (val) => {
 // A hard coded list of stops for the itinerary.
 const stopList = [
   {
-    name: "Opera House",
+    stopName: "Opera House",
     image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg",
     length: "2 hours",
   },
@@ -38,16 +38,42 @@ function Editor() {
   const addStop = () => {
     const oldList = [...stopList];
     oldList.push({
-      name: "New Stop",
+      stopName: "New Stop",
       image: "",
-      length: "0 hours",
+      duration: "0 hours",
     });
     setStops(oldList);
   }
 
+  const updateStopNameIndex = (index, newName) => {
+    const oldList = [...stopList];
+    oldList[index].stopName = newName;
+    setStops(oldList);
+  }
+
+  const updateStopImageIndex = (index, newImg) => {
+    const oldList = [...stopList];
+    oldList[index].image = newImg;
+    setStops(oldList);
+  }
+
+  const updateStopDurationIndex = (index, newDuration) => {
+    const oldList = [...stopList];
+    oldList[index].duration = newDuration;
+    setStops(oldList);
+  }
+
+  // Style for input fields for each stop.
+  const inputStyle = {
+    marginLeft: '10px' 
+  }
+
+  console.log(stops);
+
+
   return (
     <>
-      <h1>Create Itinerary</h1> { /* TODO: Change this later! */ }
+      <h1>Edit Itinerary</h1> { /* TODO: Change this later! */ }
 
       {/* File upload for image. */}
       New itinerary image: <input 
@@ -78,11 +104,41 @@ function Editor() {
       {/* Map all stops here. Each field should be editable. 
       Order: text input, image upload, and text input. */}
 
+
       {
-        stops.map(s => {
+        stops.map((s, index) => {
           return (
-            <div>
-              {/* Here... */}
+            <div style={{
+              // Styles for each stop.
+              margin: '20px',
+              padding: '10px',
+              backgroundColor: '#ffffaa',
+            }}>
+              Stop {index + 1} name: 
+              <input
+                style={inputStyle}
+                type="text" 
+                value={s.stopName} 
+                onChange={e => updateStopNameIndex(index, e.target.value)}
+              />
+              <br /><br /> 
+              <img src={s.image} alt={`Stop ${index + 1}`}/>
+              <br />
+              Update image: 
+              <input
+                style={inputStyle}
+                type="file" 
+                accept="image/jpeg, image/png, image/jpg"
+                onChange={e => updateStopImageIndex(index, e.target.value)}
+              />
+              <br /><br /> 
+              Stop {index + 1} duration: 
+              <input 
+                style={inputStyle}
+                type="text"
+                value={s.length}
+                onChange={e => updateStopDurationIndex(index, e.target.value)}
+              />
             </div>
           )
         })
@@ -93,6 +149,7 @@ function Editor() {
       <Button 
         variant="contained"
         color="primary"
+        disabled={title === '' || duration <= 0 || location === ''}
         onClick={handleClick}>
         Save
       </Button>
