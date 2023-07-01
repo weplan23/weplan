@@ -23,6 +23,7 @@ function AddPage () {
   }
 
   const [title, setTitle] = useState('');
+  const [itineraryImg, setItineraryImg] = useState('');
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
   
@@ -34,16 +35,11 @@ function AddPage () {
     <>
       <Typography variant='h3'>Create Itinerary</Typography>
 
-      {/* File upload for image. */}
-      Itinerary image: <input 
-        type="file" 
-        accept="image/jpeg, image/png, image/jpg" 
-        onChange={e => handleUpload(e.target.value)}
-      />
-      <br /> <br /> 
 
       {/* Inputs for title, location, and number of nights. */}
       Itinerary Title: <input type="text" onChange={e => setTitle(e.target.value)} />
+      <br /> <br /> 
+      Itinerary image URL: <input type="text" onChange={e => setItineraryImg(e.target.value)} />
       <br /> <br /> 
       Location: <input type="text" onChange={e => setLocation(e.target.value)} />
       <br /> <br /> 
