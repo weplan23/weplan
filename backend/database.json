@@ -1,40 +1,4 @@
 {
-    "itineraryIdCount": 7,
-    "itineraries": [
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        },
-        {
-            "title": "Hello",
-            "location": "UNSW",
-            "profileName": "John"
-        }
-    ]
+    "itineraryIdCount": 0,
+    "itineraries": []
 }

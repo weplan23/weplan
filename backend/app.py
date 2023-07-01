@@ -11,7 +11,8 @@ JSON_FILE = 'database.json'
 # Clear the JSON file
 def clear_data():
     with open(JSON_FILE, 'w') as file:
-        json.dump([], file)
+        json.dump({"itineraryIdCount": 0, 
+                    "itineraries": []}, file, indent=4)
 
 
 # Read data from the JSON file
