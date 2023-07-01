@@ -16,9 +16,7 @@ const stopList = [
     image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg",
     length: "2 hours",
   },
-  {
-    // Add more stops here.
-  }
+  // Add more stops here.
 ]
 
 function Editor() {
@@ -39,7 +37,7 @@ function Editor() {
     const oldList = [...stopList];
     oldList.push({
       stopName: "New Stop",
-      image: "",
+      image: "null",
       duration: "0 hours",
     });
     setStops(oldList);
@@ -104,7 +102,6 @@ function Editor() {
       {/* Map all stops here. Each field should be editable. 
       Order: text input, image upload, and text input. */}
 
-
       {
         stops.map((s, index) => {
           return (
@@ -118,7 +115,7 @@ function Editor() {
               <input
                 style={inputStyle}
                 type="text" 
-                value={s.stopName} 
+                value={s.stopName || "New Stop"} 
                 onChange={e => updateStopNameIndex(index, e.target.value)}
               />
               <br /><br /> 
@@ -136,7 +133,7 @@ function Editor() {
               <input 
                 style={inputStyle}
                 type="text"
-                value={s.length}
+                value={s.duration || "0 hours"}
                 onChange={e => updateStopDurationIndex(index, e.target.value)}
               />
             </div>
