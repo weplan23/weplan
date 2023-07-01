@@ -24,7 +24,7 @@ const navConfig = [
   {
     title: 'itineraries',
     path: '/itinerary/list',
-    icon: icon('ic_cart'),
+    icon: icon('ic_plane'),
   },
 ];
 
