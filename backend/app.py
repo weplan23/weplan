@@ -26,6 +26,9 @@ def write_data(data):
     with open(JSON_FILE, 'w') as file:
         json.dump(data, file, indent=4)
 
+def itineraries_count():
+    data = read_data()
+    return data["itineraryIdCount"]
 
 @app.route('/echo', methods=['GET'])
 def echo():
