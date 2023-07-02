@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Typography, Grid } from '@mui/material';
+import { Button, Typography, Grid, Alert } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {AddProductCard, EditableItinerary} from '../sections/@dashboard/products/ProductCard';
 
@@ -25,6 +25,8 @@ function ViewPage() {
     navigate('/home');
   }
 
+  const [shareClicked, setShareClicked] = useState(false);
+
   const product = {
     name: "Not just the Opera House",
     cover: "https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg",
@@ -38,14 +40,15 @@ function ViewPage() {
   return (
     <>
       <Typography variant='h4'>View Itinerary</Typography>
-
+    
       <Button
-        style={{border: '2px solid'}}
+        style={{border: '2px solid', marginTop: "10px"}}
         variant='outlined'
-        onClick={() => alert("Link copied to clipboard!")}
+        onClick={() => setShareClicked(true)}
       >
         Share
       </Button>
+      {shareClicked && <Alert severity="info" style={{marginTop: "8px"}}>A shareable link has been copied to your clipboard.</Alert>}
 
       <div style={{
         margin: '10px',
