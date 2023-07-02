@@ -30,7 +30,7 @@ function ViewPage() {
 
   const product = {
     name: "Not just the Opera House",
-    cover: "https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg",
+    cover: "https://a.cdn-hotels.com/gdcs/production90/d515/39e765a9-77d3-40e7-bdaf-94f6731a5b27.jpg",
     price: "1 night",
     colors: [],
     status: "",
