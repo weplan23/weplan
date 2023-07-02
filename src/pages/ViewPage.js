@@ -26,6 +26,7 @@ function ViewPage() {
   }
 
   const [shareClicked, setShareClicked] = useState(false);
+  const [upvoted, setUpvoted] = useState(false);
 
   const product = {
     name: "Not just the Opera House",
@@ -48,15 +49,17 @@ function ViewPage() {
       >
         Share
       </Button>
-      {shareClicked && <Alert severity="info" style={{marginTop: "8px"}}>A shareable link has been copied to your clipboard.</Alert>}
 
       <Button
-        style={{marginLeft: '20px', border: '2px solid'}}
+        style={{marginLeft: '20px', border: '2px solid', marginTop: "10px"}}
         variant='outlined'
-        onClick={() => alert("Link copied to clipboard!")}
+        onClick={() => setUpvoted(true)}
       >
         Upvote
       </Button>
+
+      {shareClicked && <Alert severity="info" style={{marginTop: "8px"}}>A shareable link has been copied to your clipboard.</Alert>}
+      {upvoted && <Alert severity="success" style={{marginTop: "8px"}}>Itinerary upvoted!</Alert>}
 
       <div style={{
         margin: '10px',
