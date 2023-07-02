@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { faker } from '@faker-js/faker';
+import { useNavigate } from 'react-router-dom';
 // @mui
 import { useTheme } from '@mui/material/styles';
 import { Grid, Container, Typography, Stack } from '@mui/material';
@@ -24,8 +25,14 @@ import {
 // ----------------------------------------------------------------------
 
 export default function DashboardAppPage() {
+  const navigate = useNavigate();
   const theme = useTheme();
   const [openFilter, setOpenFilter] = useState(false);
+
+  const handleClick = () => {
+    console.log("efsuji");
+    navigate('/edit/0');
+  }
 
   const handleOpenFilter = () => {
     setOpenFilter(true);
@@ -58,7 +65,7 @@ export default function DashboardAppPage() {
           </Stack>
         </Stack>
 
-        <ProductList products={PRODUCTS} />
+        <ProductList products={PRODUCTS} onClick={handleClick} />
       </Container>
     </>
   );

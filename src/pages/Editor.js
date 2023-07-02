@@ -109,20 +109,20 @@ function Editor() {
       <br />
       <br />
       <Grid container spacing={3}>
-      {
-        stops.map((s, index) => {
-          return (
-            <>
-              <Grid item xs={12} sm={6} md={3}>
-                <div style={{textAlign: 'center', paddingBottom: '5px'}}>
-                  Stop {index + 1}
-                </div>
-                <EditableItinerary product={product}/>
-              </Grid>
-            </>
-          )
-        })
-      }
+        {
+          stops.map((s, index) => {
+            return (
+              <>
+                <Grid item xs={12} sm={6} md={3}>
+                  <div style={{textAlign: 'center', paddingBottom: '5px'}}>
+                    Stop {index + 1}
+                  </div>
+                  <EditableItinerary product={product}/>
+                </Grid>
+              </>
+            )
+          })
+        }
       </Grid>
 
       {/* Save button. */}
