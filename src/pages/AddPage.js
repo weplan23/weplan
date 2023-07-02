@@ -11,12 +11,6 @@ const handleUpload = (val) => {
 
 
 function AddPage () {
-  // TODO: 
-  // [ COMPLETE    ] Add image upload.
-  // [ COMPLETE    ] Add inputs for location (text) and number of nights (number).
-  // [ COMPLETE    ] Add save button and onClick handler.
-  // [ NOT STARTED ] Apply styles for header, inputs, button. Right now they are invisible.
-  // [ COMPLETE    ] Make save button navigate to editor page.
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -39,11 +33,11 @@ function AddPage () {
       {/* Inputs for title, location, and number of nights. */}
       <TextField id="outlined-basic" label="Itinerary title" variant="outlined" onChange={e => setTitle(e.target.value)}/>
       <br /> <br /> 
-      <TextField id="outlined-basic" label="Duration" variant="outlined" onChange={e => setLocation(e.target.value)}/>
+      <TextField id="outlined-basic" label="Duration (nights)" variant="outlined" onChange={e => setDuration(e.target.value)}/>
       <br /> <br /> 
-      <TextField id="outlined-basic" label="Location" variant="outlined" onChange={e => setDuration(e.target.value)}/>
+      <TextField id="outlined-basic" label="Location" variant="outlined" onChange={e => setLocation(e.target.value)}/>
       <br /><br />
-      <TextField id="outlined-basic" label="Image" variant="outlined" onChange={e => setItineraryImg(e.target.value)}/>
+      <TextField id="outlined-basic" label="Image URL" variant="outlined" onChange={e => setItineraryImg(e.target.value)}/>
 
       {/* Save button. */}
       <br /> <br /> 
@@ -51,7 +45,7 @@ function AddPage () {
         sx={{color: '#008800'}}
         style={{border: '2px solid'}}
         variant="outlined"
-        disabled={title === '' || duration <= 0 || location === ''}
+        disabled={title === '' || duration < 0 || location === ''}
         onClick={handleClick}>
         Save
       </Button>

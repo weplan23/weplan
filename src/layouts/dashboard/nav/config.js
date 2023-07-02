@@ -19,7 +19,7 @@ const navConfig = [
   {
     title: "blog",
     path: "/blog",
-    icon: icon("ic_analytics")
+    icon: icon("ic_blog")
   },
   // {
   //   title: 'edit itinerary',
