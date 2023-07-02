@@ -24,6 +24,7 @@ export default function Router() {
         { path: 'itinerary/list', element: <ProductsPage /> },
         { path: 'edit', element: <EditPage />},
         { path: 'edit/0', element: <Editor />},
+        { path: 'view', element: <ViewPage />},
         { path: 'blog', element: <BlogPage />},
         { path: 'view', element: <ViewPage />},
       ],

@@ -29,11 +29,6 @@ export default function DashboardAppPage() {
   const theme = useTheme();
   const [openFilter, setOpenFilter] = useState(false);
 
-  const handleClick = () => {
-    console.log("efsuji");
-    navigate('/edit/0');
-  }
-
   const handleOpenFilter = () => {
     setOpenFilter(true);
   };
@@ -65,7 +60,7 @@ export default function DashboardAppPage() {
           </Stack>
         </Stack>
 
-        <ProductList products={PRODUCTS} onClick={handleClick} />
+        <ProductList products={PRODUCTS} />
       </Container>
     </>
   );
