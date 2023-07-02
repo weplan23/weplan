@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Button, Typography,  Box, TextField } from '@mui/material'
 // import { backendCall } from '../helpers'
 import { useNavigate } from 'react-router-dom';
-import {EditableItinerary} from '../sections/@dashboard/products/ProductCard';
+import {AddProductCard} from '../sections/@dashboard/products/ProductCard';
 
 const handleUpload = (val) => {
   // Send image URL? to database.
