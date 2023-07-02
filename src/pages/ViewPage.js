@@ -47,6 +47,14 @@ function ViewPage() {
         Share
       </Button>
 
+      <Button
+        style={{marginLeft: '20px', border: '2px solid'}}
+        variant='outlined'
+        onClick={() => alert("Link copied to clipboard!")}
+      >
+        Upvote
+      </Button>
+
       <div style={{
         margin: '10px',
         padding: '5px',
