@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Typography } from '@mui/material'
+import { Button, Typography,  Box, TextField } from '@mui/material'
 // import { backendCall } from '../helpers'
 import { useNavigate } from 'react-router-dom';
+import {EditableItinerary} from '../sections/@dashboard/products/ProductCard';
 
 const handleUpload = (val) => {
   // Send image URL? to database.
@@ -29,21 +30,20 @@ function AddPage () {
   
   // console.log(`Title: ${title}`);
   // console.log(`Location: ${location}`);
-  // console.log(`Duration: ${duration}`);
-
+  // consoctle.log(`Duration: ${duration}`);
   return (
     <>
       <Typography variant='h3'>Create Itinerary</Typography>
-
+      <br />
 
       {/* Inputs for title, location, and number of nights. */}
-      Itinerary Title: <input type="text" onChange={e => setTitle(e.target.value)} />
+      <TextField id="outlined-basic" label="Itinerary title" variant="outlined" onChange={e => setTitle(e.target.value)}/>
       <br /> <br /> 
-      Itinerary image URL: <input type="text" onChange={e => setItineraryImg(e.target.value)} />
+      <TextField id="outlined-basic" label="Duration" variant="outlined" onChange={e => setLocation(e.target.value)}/>
       <br /> <br /> 
-      Location: <input type="text" onChange={e => setLocation(e.target.value)} />
-      <br /> <br /> 
-      Duration: <input type="number" onChange={e => setDuration(e.target.value)} /> nights
+      <TextField id="outlined-basic" label="Location" variant="outlined" onChange={e => setDuration(e.target.value)}/>
+      <br /><br />
+      <TextField id="outlined-basic" label="Image" variant="outlined" onChange={e => setItineraryImg(e.target.value)}/>
 
       {/* Save button. */}
       <br /> <br /> 
