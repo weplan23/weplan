@@ -11,7 +11,7 @@ function ViewPage() {
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
 
-  const [stops, setStops] = useState(stopList);
+  const [stops, setStops] = useState([]);
 
   const navigate = useNavigate();
 

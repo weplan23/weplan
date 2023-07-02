@@ -8,6 +8,7 @@ import AddPage from './pages/AddPage';
 import EditPage from './pages/EditPage';
 import Editor from './pages/Editor';
 import BlogPage from './pages/BlogPage';
+import ViewPage from './pages/ViewPage';
 
 // ----------------------------------------------------------------------
 
@@ -23,6 +24,7 @@ export default function Router() {
         { path: 'itinerary/list', element: <ProductsPage /> },
         { path: 'edit', element: <EditPage />},
         { path: 'edit/0', element: <Editor />},
+        { path: 'view', element: <ViewPage />},
         { path: 'blog', element: <BlogPage />},
       ],
     },

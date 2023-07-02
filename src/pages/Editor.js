@@ -85,18 +85,6 @@ function Editor() {
         </Grid>
       </div>
 
-      <Typography variant='h5'>Itinerary Details</Typography>
-      <br />
-
-      {/* Input fields for itinerary details. */}
-      <TextField id="outlined-basic" value="A day on the Southern Coast" label="Itinerary title" variant="outlined" onChange={e => setTitle(e.target.value)}/>
-      <br /> <br /> 
-      <TextField id="outlined-basic" value="1" label="Duration (nights)" variant="outlined" onChange={e => setDuration(e.target.value)}/>
-      <br /> <br /> 
-      <TextField id="outlined-basic" value="NSW" label="Location" variant="outlined" onChange={e => setLocation(e.target.value)}/>
-      <br /><br />
-      <TextField id="outlined-basic" value="https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg" label="Image URL" variant="outlined" onChange={e => setItineraryImg(e.target.value)}/>
-
 
       {/* Add stop button. */}
       <br /> <br />
@@ -105,7 +93,10 @@ function Editor() {
         sx={{color: '#008800'}}
         style={{border: '2px solid', marginTop: "8px"}}
         variant="outlined"
-        onClick={addStop}>
+        onClick={addStop}
+        disabled={saveClicked}
+        >
+        
         Add Stop
       </Button>
 
@@ -159,7 +150,7 @@ function Editor() {
         sx={{color: '#008800'}}
         style={{border: '2px solid'}}
         variant="outlined"
-        disabled={stops.length === 0}
+        disabled={stops.length === 0 || saveClicked}
         onClick={handleClick}>
         Save
       </Button>
