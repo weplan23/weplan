@@ -77,17 +77,22 @@ function ViewPage() {
       <br />
       <br />
       <Grid container spacing={3}>
-      {
-        stopList.map((s, index) => {
-          return (
-            <>
-              <Grid item xs={12} sm={6} md={3}>
-                <EditableItinerary product={product}/>
-              </Grid>
-            </>
-          )
-        })
-      }
+        {
+          stopList.map((s, index) => {
+            const product = {
+              name: s.stopName,
+              cover: s.image,
+              price: s.duration
+            };
+            
+            return <Grid item xs={12} sm={6} md={3}>
+              <div style={{textAlign: 'center', paddingBottom: '5px'}}>
+                Stop {index + 1}
+              </div>
+              <AddProductCard product={product}/>
+            </Grid>;
+          })
+        }
       </Grid>
     </>
   )
