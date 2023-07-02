@@ -26,8 +26,10 @@ function AddPage () {
   // console.log(`Location: ${location}`);
   // consoctle.log(`Duration: ${duration}`);
   return (
-    <>
-      <Typography variant='h3'>Create Itinerary</Typography>
+    <div style={{
+      paddingLeft: '20px'
+    }}>
+      <Typography variant='h4'>Create Itinerary</Typography>
       <br />
 
       {/* Inputs for title, location, and number of nights. */}
@@ -49,7 +51,7 @@ function AddPage () {
         onClick={handleClick}>
         Save
       </Button>
-    </>
+    </div>
   );
 }
 
