@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Typography, Grid } from '@mui/material';
+import { Button, Typography, Grid, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {AddProductCard, EditableItinerary} from '../sections/@dashboard/products/ProductCard';
 import PRODUCTS from '../_mock/products';
@@ -17,21 +17,6 @@ export const handleProduct = (newProduct) => {
   product = newProduct;
 }
 
-const handleUpload = (val) => {
-  // Send image URL? to database.
-  console.log(`Image uploaded successfully! ${val}`);
-}
-
-// A hard coded list of stops for the itinerary.
-const stopList = [
-  // {
-  //   stopName: "Opera House",
-  //   image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Sydney_Australia._%2821339175489%29.jpg",
-  //   length: "2 hours",
-  // },
-  // Add more stops here.
-]
-
 function Editor() {
   // Change these to hard coded values.
   const [title, setTitle] = useState('');
@@ -40,7 +25,7 @@ function Editor() {
   const [duration, setDuration] = useState(0);
   const [saveClicked, setSaveClicked] = useState(false);
 
-  const [stops, setStops] = useState(stopList);
+  const [stops, setStops] = useState([]);
 
   const navigate = useNavigate();
 
@@ -87,22 +72,35 @@ function Editor() {
 
   return (
     <>
-      <Typography variant='h3'>Edit Itinerary</Typography>
+      <Typography variant='h4'>Edit Itinerary</Typography>
 
       <div style={{
         margin: '10px',
         padding: '5px',
       }}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={3}>
-        <AddProductCard product={product}/>
-        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={3}>
+            <AddProductCard product={product}/>
+          </Grid>
         </Grid>
       </div>
 
-      {/* Add stop button. */}
+      <Typography variant='h5'>Itinerary Details</Typography>
       <br />
-      <Typography variant='h4'>Your stops</Typography>
+
+      {/* Input fields for itinerary details. */}
+      <TextField id="outlined-basic" value="A day on the Southern Coast" label="Itinerary title" variant="outlined" onChange={e => setTitle(e.target.value)}/>
+      <br /> <br /> 
+      <TextField id="outlined-basic" value="1" label="Duration (nights)" variant="outlined" onChange={e => setDuration(e.target.value)}/>
+      <br /> <br /> 
+      <TextField id="outlined-basic" value="NSW" label="Location" variant="outlined" onChange={e => setLocation(e.target.value)}/>
+      <br /><br />
+      <TextField id="outlined-basic" value="https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg" label="Image URL" variant="outlined" onChange={e => setItineraryImg(e.target.value)}/>
+
+
+      {/* Add stop button. */}
+      <br /> <br />
+      <Typography variant='h5'>Your stops</Typography>
       <Button 
         sx={{color: '#008800'}}
         style={{border: '2px solid', marginTop: "8px"}}
@@ -123,6 +121,9 @@ function Editor() {
           return (
             <>
             <Grid item xs={12} sm={6} md={3}>
+            <div style={{textAlign: 'center', paddingBottom: '5px'}}>
+                    Stop {index + 1}
+                  </div>
             <EditableItinerary index={index} product={product} x={updateStopNameIndex} y={updateStopImageIndex} z={updateStopDurationIndex}/>
             </Grid>
             </>
