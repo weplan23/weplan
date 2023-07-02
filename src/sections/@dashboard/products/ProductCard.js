@@ -81,15 +81,55 @@ export function EditableItinerary() {
   const status = true;
   const cover = 'https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/sydney-symphony-orchestra-concert-hall-credit-daniel-boud-019-16-9.jpg';
   return (
-    <Card style={{width: "300px"}}>
+    <Card>
 
 
 
       <Stack spacing={2} sx={{ p: 3 }}>
 
         <Stack direction="column" alignItems="center" justifyContent="space-between">
-        <TextField id="outlined-basic" label="Itinerary name" variant="outlined" style={{margin: "5px"}}/>
-        <TextField id="outlined-basic" label="Location" variant="outlined" style={{margin: "5px"}}/>
+        <TextField id="outlined-basic" label="Stop location" variant="outlined" style={{margin: "8px"}}/>
+        <TextField id="outlined-basic" label="Duration" variant="outlined" style={{margin: "8px"}}/>
+        <TextField id="outlined-basic" label="Image" variant="outlined" style={{margin: "8px"}}/>
+        </Stack>
+      </Stack>
+    </Card>
+  );
+}
+
+export function AddProductCard({ product }) {
+  const { name, cover, price, colors, status, priceSale } = product;
+
+  return (
+    <Card>
+      <Box sx={{ pt: '100%', position: 'relative' }}>
+        {status && (
+          <Label
+            variant="filled"
+            color={(status === 'sale' && 'error') || 'info'}
+            sx={{
+              zIndex: 9,
+              top: 16,
+              right: 16,
+              position: 'absolute',
+              textTransform: 'uppercase',
+            }}
+          >
+            {status}
+          </Label>
+        )}
+        <StyledProductImg src={cover} />
+      </Box>
+
+      <Stack spacing={2} sx={{ p: 3 }}>
+        <Link color="inherit" underline="hover">
+          <Typography variant="subtitle2" noWrap>
+            {name}
+          </Typography>
+        </Link>
+
+        <Stack direction="row" alignItems="center" justifyContent="space-between">
+          <ColorPreview colors={colors} />
           <Typography variant="subtitle1">
             <Typography
               component="span"
@@ -99,10 +139,10 @@ export function EditableItinerary() {
                 textDecoration: 'line-through',
               }}
             >
-              Test
+              {priceSale && fCurrency(priceSale)}
             </Typography>
             &nbsp;
-            {"Test"}
+            {price}
           </Typography>
         </Stack>
       </Stack>

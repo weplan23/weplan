@@ -26,11 +26,6 @@ const navConfig = [
   //   path: 'edit',
   //   icon: icon('ic_edit'),
   // },
-  {
-    title: 'itineraries',
-    path: '/itinerary/list',
-    icon: icon('ic_cart'),
-  },
 ];
 
 export default navConfig;
