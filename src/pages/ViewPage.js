@@ -26,7 +26,7 @@ function ViewPage() {
   }
 
   const product = {
-    name: "A day on the Southern Coast",
+    name: "Not just the Opera House",
     cover: "https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg",
     price: "1 night",
     colors: [],

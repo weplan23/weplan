@@ -17,7 +17,12 @@ const navConfig = [
     icon: icon('ic_plus'),
   },
   {
-    title: "blog",
+    title: 'your itineraries',
+    path: '/itinerary/list',
+    icon: icon('ic_plane'),
+  },
+  {
+    title: "shared with you",
     path: "/blog",
     icon: icon("ic_blog")
   },
@@ -26,11 +31,6 @@ const navConfig = [
   //   path: 'edit',
   //   icon: icon('ic_edit'),
   // },
-  {
-    title: 'itineraries',
-    path: '/itinerary/list',
-    icon: icon('ic_plane'),
-  },
 ];
 
 export default navConfig;

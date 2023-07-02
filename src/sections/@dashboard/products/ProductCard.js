@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 // @mui
 import { Box, Card, Link, Typography, Stack, TextField } from '@mui/material';
@@ -26,8 +26,9 @@ ShopProductCard.propTypes = {
 };
 
 export default function ShopProductCard({ product }) {
+  const navigate = useNavigate();
   const handleClick = () => {
-    console.log("test");
+    navigate("/view");
   }
   const { name, cover, price, colors, status, priceSale } = product;
 
