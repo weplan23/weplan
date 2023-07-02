@@ -5,7 +5,6 @@ import Page404 from './pages/Page404';
 import ProductsPage from './pages/ProductsPage';
 import DashboardAppPage from './pages/DashboardAppPage';
 import AddPage from './pages/AddPage';
-import HomePage from './pages/HomePage';
 import EditPage from './pages/EditPage';
 import Editor from './pages/Editor';
 import BlogPage from './pages/BlogPage';
