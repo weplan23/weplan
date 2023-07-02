@@ -67,6 +67,10 @@ export default function Nav({ openNav, onCloseNav }) {
                 {account.displayName}
               </Typography>
 
+              <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
+                {account.upvoteCount} upvotes
+              </Typography>
+
               <Typography variant="body2" sx={{ color: 'text.secondary' }}>
                 {account.role}
               </Typography>
