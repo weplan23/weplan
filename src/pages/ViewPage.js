@@ -50,6 +50,14 @@ function ViewPage() {
       </Button>
       {shareClicked && <Alert severity="info" style={{marginTop: "8px"}}>A shareable link has been copied to your clipboard.</Alert>}
 
+      <Button
+        style={{marginLeft: '20px', border: '2px solid'}}
+        variant='outlined'
+        onClick={() => alert("Link copied to clipboard!")}
+      >
+        Upvote
+      </Button>
+
       <div style={{
         margin: '10px',
         padding: '5px',
