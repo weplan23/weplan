@@ -32,7 +32,6 @@ const IMAGES = [
   "https://upload.wikimedia.org/wikipedia/commons/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg",
   "https://www.telegraph.co.uk/content/dam/Travel/2020/February/iStock-621371796.jpg?imwidth=680",
   "https://www.youngpioneertours.com/wp-content/uploads/2020/07/28_kumgang.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRucLj1y8Yj8AQsFx4PCfhGzR7ivVZm6pqlw&usqp=CAU",
   "https://lp-cms-production.imgix.net/features/2015/08/BranCastle_Transylvania-d91a08d52fa2.jpg?w=600&h=400",
   "https://www.grantordelheide.com/images/xl/Ordelheide_20161207-_N4A7272_breachinghippo.jpg",
   "https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg",
@@ -81,14 +80,22 @@ const PROFILE_IMAGES = [
   "https://img.freepik.com/premium-photo/kazakh-man-with-falcon_672794-1049.jpg",
   "https://blog-6aa0.kxcdn.com/wp-content/uploads/2022/03/nice-things-to-say-to-mum-cover.jpg",
   "https://hips.hearstapps.com/hmg-prod/images/lesley-manville-mum-1557765393.jpg",
-  "https://resizing.flixster.com/uVt51cRU8H_EJkEEto-PMM6Ln6c=/300x300/v2/http://media.baselineresearch.com/images/317395/317395_full.jpg"
-  
+  "https://resizing.flixster.com/uVt51cRU8H_EJkEEto-PMM6Ln6c=/300x300/v2/http://media.baselineresearch.com/images/317395/317395_full.jpg",
+  "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sir_Alec_Guinness_Allan_Warren_%282%29.jpg/800px-Sir_Alec_Guinness_Allan_Warren_%282%29.jpg",
+  "https://imageio.forbes.com/specials-images/imageserve/5f1b45eac1b052b749af079c/Portrait-of-happy-young-woman-hiking-in-the-mountains/960x0.jpg?format=jpg&width=960",
+  "https://www.ef.com/wwen/blog/wp-content/uploads/2021/01/pisa_ef.jpg",
+  "https://media.istockphoto.com/id/1086145112/photo/young-solo-traveler-woman-in-singapore-street-market-checking-the-map.jpg?s=612x612&w=0&k=20&c=4b4m5BMZg8B2LjaMLsM3G5M1XWe9XTCHwaadEiBLTwM=",
+  "https://i.insider.com/52581ed46bb3f74c6e57f356?width=700",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Jebf00I2HsCJwDrwVaImS9Y_SofL2qH5L4lAfKfnmp2Yir35OK--wzt4XsfwrdOeG20&usqp=CAU",
+  "https://img.freepik.com/premium-photo/young-tourist-woman-making-selfie-photo-with-eiffel-tower-background-sunny-day-paris-france_63239-4925.jpg",
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0uClN7pd80vsJPyb8xy2JRuiMwWl6PIARLw&usqp=CAU",
+  "https://scx1.b-cdn.net/csz/news/800a/2015/2-selfiesticks.jpg"
 ]
 const PRODUCT_COLOR = ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#1890FF', '#94D82D', '#FFC107'];
 
 // ----------------------------------------------------------------------
 
-const products = [...Array(13)].map((_, index) => {
+const products = [...Array(16)].map((_, index) => {
   const setIndex = index + 1;
 
   return {
@@ -96,7 +103,7 @@ const products = [...Array(13)].map((_, index) => {
     cover: IMAGES[index],
     name: PRODUCT_NAME[index],
     price: "",
-    colors: PRODUCT_COLOR,
+    colors: UPVOTES[index],
     status: sample(['', '']),
   };
 });
