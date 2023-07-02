@@ -8,7 +8,10 @@ import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } fro
 import PRODUCTS from '../_mock/products';
 
 // ----------------------------------------------------------------------
-
+const ITINERARIES = [];
+export const handleItineraries = (itinerary) => {
+  ITINERARIES.push(itinerary);
+}
 export default function ProductsPage() {
   const [openFilter, setOpenFilter] = useState(false);
 
@@ -28,7 +31,7 @@ export default function ProductsPage() {
 
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
-          All Itineraries
+          Your itineraries
         </Typography>
 
         <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
@@ -42,7 +45,7 @@ export default function ProductsPage() {
           </Stack>
         </Stack>
 
-        <ProductList products={PRODUCTS} />
+        <ProductList products={ITINERARIES} />
         <ProductCartWidget />
       </Container>
     </>

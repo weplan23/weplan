@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'; 
 import PropTypes from 'prop-types';
 // @mui
-import { Box, Card, Link, Typography, Stack, TextField } from '@mui/material';
+import { Box, Card, Link, Typography, Stack, TextField, InputAdornment } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // utils
 import { fCurrency } from '../../../utils/formatNumber';
@@ -28,6 +28,7 @@ ShopProductCard.propTypes = {
 export default function ShopProductCard({ product }) {
   const navigate = useNavigate();
   const handleClick = () => {
+    if (product.name === "Not just the Opera House")
     navigate("/view");
   }
   const { name, cover, price, colors, status, priceSale } = product;
@@ -89,9 +90,27 @@ export function EditableItinerary({ product, index, x, y, z}) {
     <Card>
       <Stack spacing={2} sx={{ p: 3 }}>
         <Stack direction="column" alignItems="center" justifyContent="space-between">
-        <TextField id="outlined-basic" label="Stop location" variant="outlined" style={{margin: "8px"}} onChange={e => x(index, e.target.value)}/>
-        <TextField id="outlined-basic" label="Duration" variant="outlined" style={{margin: "8px"}} onChange={e => z(index, e.target.value)}/>
-        <TextField id="outlined-basic" label="Image" variant="outlined" style={{margin: "8px"}} onChange={e => y(index, e.target.value)}/>
+        <TextField id="outlined-basic" InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <p>📍</p>
+            </InputAdornment>
+          ),
+        }} label="Stop location" variant="outlined" style={{margin: "8px"}} onChange={e => x(index, e.target.value)}/>
+        <TextField id="outlined-basic"  InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <p>⌛</p>
+            </InputAdornment>
+          ),
+        }} label="Duration" variant="outlined" style={{margin: "8px"}} onChange={e => z(index, e.target.value)}/>
+        <TextField   InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <p>🖼️</p>
+            </InputAdornment>
+          ),
+        }} id="outlined-basic" label="Image" variant="outlined" style={{margin: "8px"}} onChange={e => y(index, e.target.value)}/>
         </Stack>
       </Stack>
     </Card>

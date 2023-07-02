@@ -9,6 +9,7 @@ import EditPage from './pages/EditPage';
 import Editor from './pages/Editor';
 import BlogPage from './pages/BlogPage';
 import ViewPage from './pages/ViewPage';
+import SplashScreen from './pages/SplashScreen';
 
 // ----------------------------------------------------------------------
 
@@ -27,6 +28,7 @@ export default function Router() {
         { path: 'view', element: <ViewPage />},
         { path: 'blog', element: <BlogPage />},
         { path: 'view', element: <ViewPage />},
+        { path: 'splashscreen', element: <SplashScreen />},
       ],
     },
     {

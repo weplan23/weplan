@@ -1,9 +1,9 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'John Apple',
+  displayName: 'John Cunningham',
   upvoteCount: 100,
-  email: 'john@apple.com',
+  email: 'john@cunningham.com',
   photoURL: '/assets/images/avatars/avatar_default.jpg',
 };
 

@@ -97,7 +97,7 @@ function Editor() {
         disabled={saveClicked}
         >
         
-        Add Stop
+        Add stop
       </Button>
 
 
