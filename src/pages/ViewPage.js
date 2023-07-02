@@ -39,6 +39,14 @@ function ViewPage() {
     <>
       <Typography variant='h4'>View Itinerary</Typography>
 
+      <Button
+        style={{border: '2px solid'}}
+        variant='outlined'
+        onClick={() => alert("Link copied to clipboard!")}
+      >
+        Share
+      </Button>
+
       <div style={{
         margin: '10px',
         padding: '5px',
