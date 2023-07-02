@@ -82,15 +82,11 @@ export function EditableItinerary() {
   const cover = 'https://www.sydneyoperahouse.com/sites/default/files/collaborodam_assets/sydney-symphony-orchestra-concert-hall-credit-daniel-boud-019-16-9.jpg';
   return (
     <Card>
-
-
-
       <Stack spacing={2} sx={{ p: 3 }}>
-
         <Stack direction="column" alignItems="center" justifyContent="space-between">
         <TextField id="outlined-basic" label="Stop location" variant="outlined" style={{margin: "8px"}}/>
         <TextField id="outlined-basic" label="Duration" variant="outlined" style={{margin: "8px"}}/>
-        <TextField id="outlined-basic" label="Image" variant="outlined" style={{margin: "8px"}}/>
+        <TextField id="outlined-basic" label="Image URL" variant="outlined" style={{margin: "8px"}}/>
         </Stack>
       </Stack>
     </Card>

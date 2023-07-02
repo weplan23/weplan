@@ -115,9 +115,12 @@ function Editor() {
         stops.map((s, index) => {
           return (
             <>
-            <Grid item xs={12} sm={6} md={3}>
-            <EditableItinerary product={product}/>
-            </Grid>
+              <Grid item xs={12} sm={6} md={3}>
+                <div style={{textAlign: 'center', margin: 'auto'}}>
+                  Stop {index + 1}
+                </div>
+                <EditableItinerary product={product}/>
+              </Grid>
             </>
           )
         })
