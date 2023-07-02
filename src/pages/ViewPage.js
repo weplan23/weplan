@@ -5,21 +5,25 @@ import {AddProductCard, EditableItinerary} from '../sections/@dashboard/products
 
 
 function ViewPage() {
-  // Change these to hard coded values.
-  const [title, setTitle] = useState('');
-  const [itineraryImg, setItineraryImg] = useState('');
-  const [location, setLocation] = useState('');
-  const [duration, setDuration] = useState(0);
-
-  const [stops, setStops] = useState(stopList);
+  
+    const stopList = [
+      {
+        stopName: "Opera House",
+        image: "https://tse2.mm.bing.net/th?id=OIP.irCWc82XhAlRHxbNva-5PQHaEj&pid=Api",
+        duration: "1 hour"
+      },
+      {
+        stopName: "Royal Botanic Gardens",
+        image: "https://tse1.mm.bing.net/th?id=OIP.29QYDUqHRhPgu6HLGQ0X_wHaE7&pid=Api",
+        duration: "2 hours",
+      },
+    ]
 
   const navigate = useNavigate();
 
   const handleClick = () => {
     navigate('/home');
   }
-
-  console.log(stops);
 
   const product = {
     name: "A day on the Southern Coast",
@@ -33,16 +37,16 @@ function ViewPage() {
 
   return (
     <>
-      <Typography variant='h3'>Edit Itinerary</Typography>
+      <Typography variant='h4'>View Itinerary</Typography>
 
       <div style={{
         margin: '10px',
         padding: '5px',
       }}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={3}>
-        <AddProductCard product={product}/>
-        </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6} md={3}>
+            <AddProductCard product={product}/>
+          </Grid>
         </Grid>
       </div>
 
@@ -52,7 +56,7 @@ function ViewPage() {
       <br />
       <Grid container spacing={3}>
       {
-        stops.map((s, index) => {
+        stopList.map((s, index) => {
           return (
             <>
               <Grid item xs={12} sm={6} md={3}>
@@ -63,17 +67,6 @@ function ViewPage() {
         })
       }
       </Grid>
-
-      {/* Save button. */}
-      <br /> <br /> 
-      <Button 
-        sx={{color: '#008800'}}
-        style={{border: '2px solid'}}
-        variant="outlined"
-        disabled={stops.length === 0}
-        onClick={handleClick}>
-        Save
-      </Button>
     </>
   )
 }
