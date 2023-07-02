@@ -2,7 +2,20 @@ import { useState } from 'react';
 import { Button, Typography, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {AddProductCard, EditableItinerary} from '../sections/@dashboard/products/ProductCard';
+import PRODUCTS from '../_mock/products';
 
+let product = {
+  name: "A day on the Southern Coast",
+  cover: "https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg",
+  price: "1 night",
+  colors: 0,
+  status: "",
+  priceSale: ""
+}
+
+export const handleProduct = (newProduct) => {
+  product = newProduct;
+}
 
 const handleUpload = (val) => {
   // Send image URL? to database.
@@ -25,13 +38,15 @@ function Editor() {
   const [itineraryImg, setItineraryImg] = useState('');
   const [location, setLocation] = useState('');
   const [duration, setDuration] = useState(0);
+  const [saveClicked, setSaveClicked] = useState(false);
 
   const [stops, setStops] = useState(stopList);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/home');
+    setSaveClicked(true);
+    PRODUCTS.push(product);
   }
 
   const addStop = () => {
@@ -69,15 +84,6 @@ function Editor() {
 
   console.log(stops);
 
-  const product = {
-    name: "A day on the Southern Coast",
-    cover: "https://www.nationalparks.nsw.gov.au/-/media/npws/images/regions/south-coast/south-coast-murramarang-01.jpg",
-    price: "1 night",
-    colors: [],
-    status: "",
-    priceSale: ""
-  }
-
 
   return (
     <>
@@ -112,11 +118,33 @@ function Editor() {
       <br />
       <Grid container spacing={3}>
       {
+        !saveClicked && 
         stops.map((s, index) => {
           return (
             <>
             <Grid item xs={12} sm={6} md={3}>
-            <EditableItinerary product={product}/>
+            <EditableItinerary index={index} product={product} x={updateStopNameIndex} y={updateStopImageIndex} z={updateStopDurationIndex}/>
+            </Grid>
+            </>
+          )
+        })
+      }
+      {
+        saveClicked && 
+        stops.map((s, index) => {
+          const product = {
+    name: stops[index].stopName,
+    cover: stops[index].image,
+    price: stops[index].duration,
+    colors: [],
+    status: "",
+    priceSale: ""
+  }
+  console.log(product)
+          return (
+            <>
+            <Grid item xs={12} sm={6} md={3}>
+            <AddProductCard product={product} />
             </Grid>
             </>
           )

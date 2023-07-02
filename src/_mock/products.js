@@ -32,7 +32,6 @@ const IMAGES = [
   "https://upload.wikimedia.org/wikipedia/commons/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg",
   "https://www.telegraph.co.uk/content/dam/Travel/2020/February/iStock-621371796.jpg?imwidth=680",
   "https://www.youngpioneertours.com/wp-content/uploads/2020/07/28_kumgang.jpg",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRucLj1y8Yj8AQsFx4PCfhGzR7ivVZm6pqlw&usqp=CAU",
   "https://lp-cms-production.imgix.net/features/2015/08/BranCastle_Transylvania-d91a08d52fa2.jpg?w=600&h=400",
   "https://www.grantordelheide.com/images/xl/Ordelheide_20161207-_N4A7272_breachinghippo.jpg",
   "https://i.natgeofe.com/n/535f3cba-f8bb-4df2-b0c5-aaca16e9ff31/giza-plateau-pyramids.jpg",
@@ -88,7 +87,7 @@ const PRODUCT_COLOR = ['#00AB55', '#000000', '#FFFFFF', '#FFC0CB', '#FF4842', '#
 
 // ----------------------------------------------------------------------
 
-const products = [...Array(13)].map((_, index) => {
+const products = [...Array(16)].map((_, index) => {
   const setIndex = index + 1;
 
   return {
@@ -96,7 +95,7 @@ const products = [...Array(13)].map((_, index) => {
     cover: IMAGES[index],
     name: PRODUCT_NAME[index],
     price: "",
-    colors: PRODUCT_COLOR,
+    colors: UPVOTES[index],
     status: sample(['', '']),
   };
 });

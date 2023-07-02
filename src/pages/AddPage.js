@@ -3,6 +3,7 @@ import { Button, Typography,  Box, TextField } from '@mui/material'
 // import { backendCall } from '../helpers'
 import { useNavigate } from 'react-router-dom';
 import {AddProductCard} from '../sections/@dashboard/products/ProductCard';
+import { handleProduct } from './Editor';
 
 const handleUpload = (val) => {
   // Send image URL? to database.
@@ -20,6 +21,14 @@ function AddPage () {
   const navigate = useNavigate();
 
   const handleClick = () => {
+    handleProduct({
+        name: title,
+        cover: itineraryImg,
+        price: duration,
+        colors: 0,
+        status: "",
+        priceSale: ""
+      });
     navigate('/edit/0');
   }
 
